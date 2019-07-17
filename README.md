@@ -4,20 +4,20 @@ Simple console program for controlling a SmarAct linear positioning stage
 without position sensor. The positioning stage is connected to a Control 
 Unit (CU) with USB interface.
 
-Version 0.1.0  
+Version 0.1.1  
 Copyright 2019 Tofwerk AG
 
 ## smaract.exe
 
 ![](smaract.png)
 
-## smaract_cmdline.exe
+### Command line arguments
 
-Command line version.
+The program can also be used with command line arguments.
 
-#### Usage
+Usage:
 ```shell
-smaract_cmdline <number or command>
+smaract <number or command>
 ```
 
 `<number>`  Move the positioner by `<number>` mm.  
