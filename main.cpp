@@ -14,6 +14,7 @@
 #include <windows.h>
 #include <SCU3DControl.h>
 #include "functions.h"
+#include <stdlib.h>
 
 using namespace std;
 
@@ -92,18 +93,7 @@ int main(int argc, char* argv[]) {
     SetConsoleTitle("SmarAct Positioner Control");
     SetWindowSize(100, 30);
     
-    printf("-------------------------------------------------------------------\n");
-    printf("SMARACT POSITIONER CONTROL \n\n");
-    printf("Version 0.1.1 \n");
-    printf("Copyright 2019 Tofwerk AG \n");
-    printf("-------------------------------------------------------------------\n\n");
-    printf("Type a number or command and press enter.\n\n");
-    printf("<number> Move the positioner by <number> mm.\n");
-    printf("i        Show some diagnostic information.\n");
-    printf("z        Set current position to zero.\n");
-    printf("q        Quit program.\n\n");
-    printf("The command prompt shows the current position.\n");
-    printf("-------------------------------------------------------------------\n\n");
+    PrintHeader();
     
     // Open the control unit with USB interface in synchronous communication mode
     SA_STATUS st = SA_InitDevices(SA_SYNCHRONOUS_COMMUNICATION);
@@ -149,6 +139,16 @@ int main(int argc, char* argv[]) {
         cout << CurrentDateTime() << " | ";
         PrintSystemProperty();
         
+        cout << position << " mm $ ";
+      }
+      
+      // Clear screen
+      if (command == "c") {
+        system("cls");
+        PrintHeader();
+        PrintDeviceInfo();
+        printf("\n\n");
+        // command prompt
         cout << position << " mm $ ";
       }
       

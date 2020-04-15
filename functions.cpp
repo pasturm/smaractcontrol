@@ -37,9 +37,9 @@ std::string CurrentDateTime() {
 void ShowCommandlineUsage(string name) {
   cout << "Usage:\n" << name << " <number or command>\n" 
        << "<number> Move the positioner by <number> mm.\n"
-       << "i        Show some positioner diagnostic information.\n"
+       << "i        Show internal temperature and voltage.\n"
        << "h        Show this help message.\n"
-       << "z        Set current position to zero.\n";
+       << "z        Set current position to 0 mm.\n";
 }
 
 // Print the error status if an error occurs.
@@ -154,4 +154,21 @@ void PrintSystemProperty() {
   SA_GetSystemProperty_S(device_index, SA_INTERNAL_VOLTAGE_PROP, &value);
   double volt = static_cast<double>(value)/10.0;
   printf("Internal voltage: %.1f V\n", volt);
+}
+
+// Print header
+void PrintHeader() {
+  cout << "-------------------------------------------------------------------\n"
+       << "SMARACT POSITIONER CONTROL \n\n"
+       << "Version 0.1.2 \n"
+       << "Copyright 2020 Tofwerk AG \n"
+       << "-------------------------------------------------------------------\n\n"
+       << "Type a number or command and press enter.\n\n"
+       << "<number> Move the positioner by <number> mm.\n"
+       << "i        Show internal temperature and voltage.\n"
+       << "z        Set current position to 0 mm.\n"
+       << "c        Clear screen.\n"
+       << "q        Quit program.\n\n"
+       << "The command prompt shows the current position.\n"
+       << "-------------------------------------------------------------------\n\n";
 }

@@ -33,5 +33,7 @@ void PrintDeviceInfo();
 // Print internal temperature and voltage
 void PrintSystemProperty();
 
+// Print header
+void PrintHeader();
 
 #endif  // FUNCTIONS_H
