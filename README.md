@@ -1,17 +1,22 @@
-# SmarAct Positioner Control
+## SmarAct Positioner Control
 
-Simple console program for controlling a SmarAct linear positioning stage
-without position sensor. The positioning stage is connected to a Control 
-Unit (CU) with USB interface.
+Simple console program for controlling a [SmarAct](https://www.smaract.com) 
+linear positioning stage without position sensor.
 
-Version 0.1.2  
-Copyright 2020 Tofwerk AG
+### Prerequisites
 
-## smaract.exe
+The positioning stage is connected to a SmarAct Simple Control Unit (SCU) with 
+USB interface. The SCU software including the C programming libraries need to be
+installed.
+
+
+### GUI
+
+smaract.exe
 
 ![](smaract.png)
 
-### Command line arguments
+### Command line usage
 
 The program can also be used with command line arguments.
 
@@ -24,3 +29,6 @@ smaract <number or command>
 `i`               Show internal temperature and voltage.  
 `h`               Show this help message.  
 `z`               Set current position to 0 mm.                      
+
+### Author
+Patrick Sturm, TOFWERK
