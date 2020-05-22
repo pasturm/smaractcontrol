@@ -16,9 +16,9 @@ smaract.exe
 
 ![](smaract.png)
 
-### Command line usage
+### Command line interface
 
-The program can also be used with command line arguments.
+The program can also be used with command-line arguments.
 
 Usage:
 ```shell
